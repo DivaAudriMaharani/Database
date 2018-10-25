@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Input</title>
+	<title>Database</title>
 	<link rel="stylesheet" type="text/css" href="edit.css">
 </head>
 <body>
-	<h2><center>Input Data Pada DATABASE</center></h2>
+	<div class="judul">
+		<h2>Edit data pada database</h2>
+	</div>
+	<br/>
+
 	<section id="input-form">
-		<form action="input-aksi.php" method="post">
+		<form action="edit-aksi.php" method="post">
 			<div class="form">
 				<label>Id</label>
 				<input type="text" name="id">
@@ -35,6 +39,5 @@
 			</div>
 		</form>
 	</section>
-
 </body>
 </html>

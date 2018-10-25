@@ -6,14 +6,16 @@
 <body>
 
   <div class="container">
-    <h2><center>DATA PESERTA</center></h2>
+    <h1><center>DATA SISWA</center></h1>
+    <p><center><b>KELAS XI RPL 4</b></center></p>
     <table class="tabel" align="center">
   <tr>
     <th>Id</th>
     <th>Username</th>
     <th>Password</th>
     <th>Level</th>
-    <th>Full Name</th>
+    <th>Fullname</th>
+    <th>Aksi</th>
   </tr>
   </div>
   <?php
@@ -25,15 +27,21 @@
   $peserta=mysqli_query($conn,$sql_tampil);
   // 4. Lakukan fetch dengan result type MYSQL_ASSOC
   while($baris_data=mysqli_fetch_array($peserta,MYSQLI_ASSOC)){
-    echo'
+    ?>
+
     </tr>
-      <td>'.$baris_data['Id'].'</td>
-      <td>'.$baris_data['Username'].'</td>
-      <td>'.$baris_data['Password'].'</td>
-      <td>'.$baris_data['Level'].'</td>
-      <td>'.$baris_data['Full Name'].'</td>
-    </tr>';
-  }
-  ?>
+      <td><?php echo $baris_data['Id']; ?></td>
+      <td><?php echo $baris_data['Username']; ?></td>
+      <td><?php echo $baris_data['Password']; ?></td>
+      <td><?php echo $baris_data['Level']; ?></td>
+      <td><?php echo $baris_data['Full Name']; ?></td>
+
+      <td>
+      <a class="ubah" href="ubah.php?Id=<?php echo $baris_data['Id']; ?>">Edit</a> |
+      <a class="hapus" href="delete.php?Id=<?php echo $baris_data['Id']; ?>">Hapus</a>
+      </td>
+
+    </tr>'
+  <?php } ?>
 </body>
 </html>
